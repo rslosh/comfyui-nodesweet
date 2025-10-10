@@ -29,7 +29,7 @@ class BboxDetectorBatchChunked:
     RETURN_TYPES = ("IMAGE", "MASK")
     RETURN_NAMES = ("images", "masks")
     FUNCTION = "detect_chunked"
-    CATEGORY = "ImpactPack/Detector"
+    CATEGORY = "nodesweet-hellorob"
     
     def detect_chunked(self, bbox_detector, images, threshold, dilation, chunk_size=32):
         """

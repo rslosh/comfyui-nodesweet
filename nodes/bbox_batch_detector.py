@@ -30,7 +30,7 @@ class BboxDetectorBatch:
     RETURN_TYPES = ("IMAGE", "MASK")
     RETURN_NAMES = ("images", "masks")
     FUNCTION = "detect_batch"
-    CATEGORY = "ImpactPack/Detector"
+    CATEGORY = "nodesweet-hellorob"
     
     def detect_batch(self, bbox_detector, images, threshold, dilation, return_type="mask_only"):
         """

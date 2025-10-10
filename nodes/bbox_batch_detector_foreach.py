@@ -28,7 +28,7 @@ class BboxDetectorBatchForEach:
     RETURN_TYPES = ("IMAGE", "MASK")
     RETURN_NAMES = ("images", "masks")
     FUNCTION = "detect_foreach"
-    CATEGORY = "ImpactPack/Detector"
+    CATEGORY = "nodesweet-hellorob"
     
     def detect_foreach(self, bbox_detector, images, threshold, dilation):
         """

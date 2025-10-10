@@ -19,6 +19,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "BboxDetectorBatch": "BBox Detector (Batch)",
     "BboxDetectorBatchForEach": "BBox Detector (Batch ForEach)",
     "BboxDetectorBatchChunked": "BBox Detector (Batch Chunked)",
+    "SortImageSetFromFolderSortedNode": "Load Image Dataset from Folder (Sorted)",
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
