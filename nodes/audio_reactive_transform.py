@@ -24,7 +24,7 @@ class AudioReactiveTransform:
         return {
             "required": {
                 "image": ("IMAGE",),
-                "audio_weights": ("FLOAT_LIST",),
+                "audio_weights": ("FLOATS",),
                 "scale_min": ("FLOAT", {"default": 1.0, "min": 0.1, "max": 5.0, "step": 0.05}),
                 "scale_max": ("FLOAT", {"default": 1.5, "min": 0.1, "max": 5.0, "step": 0.05}),
                 "rotation_min": ("FLOAT", {"default": 0.0, "min": -360.0, "max": 360.0, "step": 1.0}),
@@ -216,14 +216,14 @@ class AudioWeightsRemap:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "audio_weights": ("FLOAT_LIST",),
+                "audio_weights": ("FLOATS",),
                 "power": ("FLOAT", {"default": 1.0, "min": 0.1, "max": 5.0, "step": 0.1}),
                 "smoothing": ("INT", {"default": 1, "min": 1, "max": 30, "step": 1}),
                 "invert": ("BOOLEAN", {"default": False}),
             },
         }
 
-    RETURN_TYPES = ("FLOAT_LIST",)
+    RETURN_TYPES = ("FLOATS",)
     RETURN_NAMES = ("remapped_weights",)
     FUNCTION = "remap"
     CATEGORY = "nodesweet-hellorob"
