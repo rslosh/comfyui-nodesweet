@@ -1,7 +1,7 @@
 [project]
 name = "nodesweet"
 description = "Makes ComfyUI more sweet"
-version = "1.0.0"
+version = "1.0.1"
 license = {file = "LICENSE"} 
 # classifiers = [
 #     # For OS-independent nodes (works on all operating systems)
@@ -22,10 +22,10 @@ license = {file = "LICENSE"}
 
 
 [project.urls]
-Repository = "https://github.com/rslosch/comfyui-nodesweet"
+Repository = "https://github.com/rslosh/comfyui-nodesweet"
 #  Used by Comfy Registry https://registry.comfy.org
-Documentation = "https://github.com/rslosch/comfyui-nodesweet/wiki"
-"Bug Tracker" = "https://github.com/rslosch/comfyui-nodesweet/issues"
+Documentation = "https://github.com/rslosh/comfyui-nodesweet/wiki"
+"Bug Tracker" = "https://github.com/rslosh/comfyui-nodesweet/issues"
 
 [tool.comfy]
 PublisherId = "hellorob"
