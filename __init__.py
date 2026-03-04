@@ -8,6 +8,7 @@ from .nodes.bbox_batch_detector_foreach import BboxDetectorBatchForEach
 from .nodes.bbox_batch_detector_chunked import BboxDetectorBatchChunked
 from .nodes.multiline_string_repeater import MultilineStringRepeater
 from .nodes.audio_reactive_transform import AudioReactiveTransform, AudioWeightsRemap
+from .nodes.easing_curve import EaseCurve, ApplyEasingToFloats
 
 # Node class mappings for ComfyUI
 NODE_CLASS_MAPPINGS = {
@@ -17,6 +18,8 @@ NODE_CLASS_MAPPINGS = {
     "MultilineStringRepeater": MultilineStringRepeater,
     "AudioReactiveTransform": AudioReactiveTransform,
     "AudioWeightsRemap": AudioWeightsRemap,
+    "EaseCurve": EaseCurve,
+    "ApplyEasingToFloats": ApplyEasingToFloats,
 }
 
 # Display names for ComfyUI interface
@@ -28,9 +31,13 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "MultilineStringRepeater": "Multiline String Repeater",
     "AudioReactiveTransform": "Audio Reactive Transform",
     "AudioWeightsRemap": "Audio Weights Remap",
+    "EaseCurve": "Ease Curve",
+    "ApplyEasingToFloats": "Apply Easing to Floats",
 }
 
-__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
+WEB_DIRECTORY = "./js"
+
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
 __version__ = "1.1.0"
 
 
