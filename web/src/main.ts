@@ -1,4 +1,4 @@
-import { app } from "/scripts/app.js"
+import { app } from "../../scripts/app.js"
 import { createApp, h } from "vue"
 import EaseCurveWidget from "./components/EaseCurveWidget.vue"
 

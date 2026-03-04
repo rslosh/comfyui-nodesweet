@@ -13,9 +13,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        /^\/scripts\/.*/,
-        /^\/extensions\/.*/,
-        /^\.\.\/\.\.\/\.\.\/scripts\/.*/,
+        /\.\.\/\.\.\/scripts\/.*/,
       ],
       output: {
         dir: resolve(__dirname, "../js"),
