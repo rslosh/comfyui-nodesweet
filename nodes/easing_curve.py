@@ -3,7 +3,7 @@ Easing curve nodes for ComfyUI.
 Generates eased FLOAT sequences for animation and audio-reactive workflows.
 """
 
-from ..lib.easing_functions import (
+from .easing_functions import (
     get_easing_function,
     get_all_easing_names,
     create_bezier_easing,

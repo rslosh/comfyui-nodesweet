@@ -3,41 +3,39 @@ ComfyUI NodeSweet
 Custom nodes for batch processing, bbox detection, and audio-reactive transforms.
 """
 
-from .nodes.bbox_batch_detector import BboxDetectorBatch
-from .nodes.bbox_batch_detector_foreach import BboxDetectorBatchForEach
-from .nodes.bbox_batch_detector_chunked import BboxDetectorBatchChunked
-from .nodes.multiline_string_repeater import MultilineStringRepeater
-from .nodes.audio_reactive_transform import AudioReactiveTransform, AudioWeightsRemap
-from .nodes.easing_curve import EaseCurve, ApplyEasingToFloats
+import logging
 
-# Node class mappings for ComfyUI
-NODE_CLASS_MAPPINGS = {
-    "BboxDetectorBatch": BboxDetectorBatch,
-    "BboxDetectorBatchForEach": BboxDetectorBatchForEach,
-    "BboxDetectorBatchChunked": BboxDetectorBatchChunked,
-    "MultilineStringRepeater": MultilineStringRepeater,
-    "AudioReactiveTransform": AudioReactiveTransform,
-    "AudioWeightsRemap": AudioWeightsRemap,
-    "EaseCurve": EaseCurve,
-    "ApplyEasingToFloats": ApplyEasingToFloats,
-}
+logger = logging.getLogger(__name__)
 
-# Display names for ComfyUI interface
-NODE_DISPLAY_NAME_MAPPINGS = {
-    "BboxDetectorBatch": "BBox Detector (Batch)",
-    "BboxDetectorBatchForEach": "BBox Detector (Batch ForEach)",
-    "BboxDetectorBatchChunked": "BBox Detector (Batch Chunked)",
-    "SortImageSetFromFolderSortedNode": "Load Image Dataset from Folder (Sorted)",
-    "MultilineStringRepeater": "Multiline String Repeater",
-    "AudioReactiveTransform": "Audio Reactive Transform",
-    "AudioWeightsRemap": "Audio Weights Remap",
-    "EaseCurve": "Ease Curve",
-    "ApplyEasingToFloats": "Apply Easing to Floats",
-}
+NODE_CLASS_MAPPINGS = {}
+NODE_DISPLAY_NAME_MAPPINGS = {}
+
+def _register(class_name, display_name, import_fn):
+    try:
+        cls = import_fn()
+        NODE_CLASS_MAPPINGS[class_name] = cls
+        NODE_DISPLAY_NAME_MAPPINGS[class_name] = display_name
+    except Exception as e:
+        logger.warning(f"[NodeSweet] Failed to load {class_name}: {e}")
+
+_register("BboxDetectorBatch", "BBox Detector (Batch)",
+    lambda: __import__(".".join([__name__, "nodes", "bbox_batch_detector"]), fromlist=["BboxDetectorBatch"]).BboxDetectorBatch)
+_register("BboxDetectorBatchForEach", "BBox Detector (Batch ForEach)",
+    lambda: __import__(".".join([__name__, "nodes", "bbox_batch_detector_foreach"]), fromlist=["BboxDetectorBatchForEach"]).BboxDetectorBatchForEach)
+_register("BboxDetectorBatchChunked", "BBox Detector (Batch Chunked)",
+    lambda: __import__(".".join([__name__, "nodes", "bbox_batch_detector_chunked"]), fromlist=["BboxDetectorBatchChunked"]).BboxDetectorBatchChunked)
+_register("MultilineStringRepeater", "Multiline String Repeater",
+    lambda: __import__(".".join([__name__, "nodes", "multiline_string_repeater"]), fromlist=["MultilineStringRepeater"]).MultilineStringRepeater)
+_register("AudioReactiveTransform", "Audio Reactive Transform",
+    lambda: __import__(".".join([__name__, "nodes", "audio_reactive_transform"]), fromlist=["AudioReactiveTransform"]).AudioReactiveTransform)
+_register("AudioWeightsRemap", "Audio Weights Remap",
+    lambda: __import__(".".join([__name__, "nodes", "audio_reactive_transform"]), fromlist=["AudioWeightsRemap"]).AudioWeightsRemap)
+_register("EaseCurve", "Ease Curve",
+    lambda: __import__(".".join([__name__, "nodes", "easing_curve"]), fromlist=["EaseCurve"]).EaseCurve)
+_register("ApplyEasingToFloats", "Apply Easing to Floats",
+    lambda: __import__(".".join([__name__, "nodes", "easing_curve"]), fromlist=["ApplyEasingToFloats"]).ApplyEasingToFloats)
 
 WEB_DIRECTORY = "./js"
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
 __version__ = "1.1.0"
-
-
