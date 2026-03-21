@@ -8,6 +8,7 @@ from .bbox_batch_detector_chunked import BboxDetectorBatchChunked
 from .multiline_string_repeater import MultilineStringRepeater
 from .audio_reactive_transform import AudioReactiveTransform, AudioWeightsRemap
 from .easing_curve import EaseCurve, ApplyEasingToFloats
+from .sort_batch_image_loader import LoadImageSetFromFolderSortedNode
 
 __all__ = [
     "BboxDetectorBatch",
@@ -18,5 +19,6 @@ __all__ = [
     "AudioWeightsRemap",
     "EaseCurve",
     "ApplyEasingToFloats",
+    "LoadImageSetFromFolderSortedNode",
 ]
 
