@@ -9,6 +9,7 @@ from .multiline_string_repeater import MultilineStringRepeater
 from .audio_reactive_transform import AudioReactiveTransform, AudioWeightsRemap
 from .easing_curve import EaseCurve, ApplyEasingToFloats
 from .sort_batch_image_loader import LoadImageSetFromFolderSortedNode
+from .sort_batch_image_loader_output import LoadImageSetFromOutputFolderSortedNode
 
 __all__ = [
     "BboxDetectorBatch",
@@ -20,5 +21,6 @@ __all__ = [
     "EaseCurve",
     "ApplyEasingToFloats",
     "LoadImageSetFromFolderSortedNode",
+    "LoadImageSetFromOutputFolderSortedNode",
 ]
 

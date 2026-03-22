@@ -36,6 +36,8 @@ _register("ApplyEasingToFloats", "Apply Easing to Floats",
     lambda: __import__(".".join([__name__, "nodes", "easing_curve"]), fromlist=["ApplyEasingToFloats"]).ApplyEasingToFloats)
 _register("LoadImageSetFromFolderSortedNode", "Load Image Dataset from Folder (Sorted)",
     lambda: __import__(".".join([__name__, "nodes", "sort_batch_image_loader"]), fromlist=["LoadImageSetFromFolderSortedNode"]).LoadImageSetFromFolderSortedNode)
+_register("LoadImageSetFromOutputFolderSortedNode", "Load Image Dataset from Output Folder (Sorted)",
+    lambda: __import__(".".join([__name__, "nodes", "sort_batch_image_loader_output"]), fromlist=["LoadImageSetFromOutputFolderSortedNode"]).LoadImageSetFromOutputFolderSortedNode)
 
 WEB_DIRECTORY = "./js"
 
